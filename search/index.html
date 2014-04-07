@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>请选择目标图片文字</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+
+<style type="text/css">
+.d{
+	width: 960px;
+    margin-top: 20px;
+    margin:0 auto;
+
+}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		//img默认加载图片1
+		$("#img").attr("src","../images/search_1.jpg");
+
+		//监听下拉框的change事件
+		$("#ddlImg").change(function(){
+			var checkValue = $("#ddlImg").val();
+			console.info(checkValue);
+			$("#img").attr("src","../images/search_"+checkValue+".jpg");
+		});
+
+
+		//通过ajax请求，异步加载img
+		//TODO
+		/*$.ajax(function(){
+			url:
+		});
+		*/
+
+	});
+</script>
+<head>
+<body>
+<form action="search.php" method="get">
+	<table align="center">
+		<tr>
+			<td>请选择搜索引擎</td>
+			<td>
+				<table>
+					<tr>
+						<select name="img_typeId" id="ddlImg">
+						  <option name="img_typeId" value ="1">百度</option>
+						  <option name="img_typeId" value ="2">Google</option>
+						</select>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>第一行文字</td>
+			<td><input type="text" name="text1" size="50"></td>
+		</tr>
+		<tr>
+			<td>第二行文字</td>
+			<td><input type="text" name="text2" size="50"></td>
+		</tr>
+		
+		<tr>
+			<td>操作</td>
+			<td>
+				<input type="submit" value="生成图片">
+			</td>
+		</tr>
+		
+	</table>
+
+	
+	<div id="divImg" class="d">
+		<div>图片结果</div>
+		<img id="img">
+	</div>
+</form>
+</body>
+</html>

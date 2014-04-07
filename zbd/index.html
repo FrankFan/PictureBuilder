@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>请选择目标图片文字</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<style type="text/css">
+.wrapper{
+	width: 960px;
+}
+
+.left{
+	margin-top: 50px;
+	width: 670px;
+	float: left;
+}
+
+.right{
+	width: 290px;
+	float: left;
+}
+</style>
+
+<head>
+<body>
+<form action="zbd.php" method="get">
+<div id="wrapper" class="wrapper">	
+	<div id="left" class="left">
+		<h2 align="center"><span>“臣妾做不到啊”图片生成器</span></h2>
+		<table align="center">
+		
+		<tr>
+			<td>第一行文字</td>
+			<td><input type="text" name="text1" size="50"></td>
+		</tr>
+		<tr>
+			<td>第二行文字</td>
+			<td><input type="text" name="text2" size="50"></td>
+		</tr>
+		
+		<tr>
+			<td>操作</td>
+			<td>
+				<input type="submit" value="生成图片">
+			</td>
+		</tr>
+		
+	</table>
+	</div>
+	
+
+	<div id="right" class="right">
+		<img src="../images/zbd.jpg" />
+	</div>
+</div>	
+</form>
+
+</body>
+</html>
